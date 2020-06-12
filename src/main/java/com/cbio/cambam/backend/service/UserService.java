@@ -5,6 +5,7 @@ import com.cbio.cambam.backend.model.User;
 import com.cbio.cambam.backend.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.security.crypto.keygen.KeyGenerators;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,6 +26,9 @@ public class UserService {
 	}
 	
 	public User create(User user) {
+		String key = KeyGenerators.string().generateKey();
+		user.setId(key);
+		
 		return repository.save(user);
 	}
 	
