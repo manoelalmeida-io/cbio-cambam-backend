@@ -1,8 +1,9 @@
-package com.cbio.cambam.backend.service;
+package com.cbio.kanban.backend.service;
 
-import com.cbio.cambam.backend.exception.ResourceNotFoundException;
-import com.cbio.cambam.backend.model.User;
-import com.cbio.cambam.backend.repository.UserRepository;
+import com.cbio.kanban.backend.service.UserService;
+import com.cbio.kanban.backend.exception.ResourceNotFoundException;
+import com.cbio.kanban.backend.model.User;
+import com.cbio.kanban.backend.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;

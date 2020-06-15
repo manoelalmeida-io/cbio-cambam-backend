@@ -1,8 +1,8 @@
-package com.cbio.cambam.backend.controller;
+package com.cbio.kanban.backend.controller;
 
-import com.cbio.cambam.backend.exception.ResourceNotFoundException;
-import com.cbio.cambam.backend.model.User;
-import com.cbio.cambam.backend.service.UserService;
+import com.cbio.kanban.backend.exception.ResourceNotFoundException;
+import com.cbio.kanban.backend.model.User;
+import com.cbio.kanban.backend.service.UserService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.http.HttpStatus;

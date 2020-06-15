@@ -1,4 +1,4 @@
-package com.cbio.cambam.backend.config;
+package com.cbio.kanban.backend.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

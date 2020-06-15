@@ -1,4 +1,4 @@
-package com.cbio.cambam.backend;
+package com.cbio.kanban.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

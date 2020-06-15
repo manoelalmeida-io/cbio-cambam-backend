@@ -1,4 +1,4 @@
-package com.cbio.cambam.backend.model;
+package com.cbio.kanban.backend.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
