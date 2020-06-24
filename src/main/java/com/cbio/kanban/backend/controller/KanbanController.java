@@ -1,10 +1,8 @@
 package com.cbio.kanban.backend.controller;
 
-import com.cbio.kanban.backend.exception.ResourceNotFoundException;
 import com.cbio.kanban.backend.model.Kanban;
 import com.cbio.kanban.backend.service.KanbanService;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,13 +32,8 @@ public class KanbanController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Kanban> one(@PathVariable String id) {
-		Optional<Kanban> kanban = service.one(id);
-		
-		if (kanban.isPresent()) {
-			return ResponseEntity.ok(kanban.get());
-		}
-		
-		throw new ResourceNotFoundException();
+		Kanban kanban = service.one(id);
+		return ResponseEntity.ok(kanban);
 	}
 	
 	@PostMapping

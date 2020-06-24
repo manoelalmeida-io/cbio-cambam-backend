@@ -21,8 +21,9 @@ public class UserService {
 		return repository.findAll();
 	}
 	
-	public Optional<User> one(String id) {
-		return repository.findById(id);
+	public User one(String id) {
+		return repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException());
 	}
 	
 	public User create(User user) {

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 import com.cbio.kanban.backend.repository.KanbanRepository;
+import org.springframework.security.crypto.keygen.KeyGenerators;
 
 @Service
 public class KanbanService {
@@ -20,11 +21,15 @@ public class KanbanService {
 		return repository.findAll();
 	}
 	
-	public Optional<Kanban> one(String id) {
-		return repository.findById(id);
+	public Kanban one(String id) {
+		return repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException());
 	}
 	
 	public Kanban create(Kanban cambam) {
+		String key = KeyGenerators.string().generateKey();
+		cambam.setId(key);
+		
 		return repository.save(cambam);
 	}
 	

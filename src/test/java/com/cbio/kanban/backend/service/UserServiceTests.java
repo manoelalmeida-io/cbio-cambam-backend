@@ -1,6 +1,5 @@
 package com.cbio.kanban.backend.service;
 
-import com.cbio.kanban.backend.service.UserService;
 import com.cbio.kanban.backend.exception.ResourceNotFoundException;
 import com.cbio.kanban.backend.model.User;
 import com.cbio.kanban.backend.repository.UserRepository;
@@ -47,8 +46,8 @@ public class UserServiceTests {
 	void one() {
 		when(repository.findById("912ec803b2ce49ee")).thenReturn(Optional.of(user));
 		
-		Optional<User> exists = service.one("912ec803b2ce49ee");
-		assertThat(exists.get()).isEqualTo(user);
+		User exists = service.one("912ec803b2ce49ee");
+		assertThat(exists).isEqualTo(user);
 	}
 	
 	@Test
