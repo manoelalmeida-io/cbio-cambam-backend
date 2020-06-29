@@ -1,5 +1,6 @@
 package com.cbio.kanban.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 import javax.persistence.Entity;
@@ -28,5 +29,6 @@ public class Task implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "kanban_column")
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Column kanbanColumn;
 }
